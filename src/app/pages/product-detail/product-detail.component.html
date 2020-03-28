@@ -1,0 +1,71 @@
+<h1> Add Product </h1>
+<form [formGroup] = "product" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label class="btn btn-primary" for="exampleFormControlFile1">Choose File</label>
+        <input type="file" (change)="onFileChange($event)" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6">
+        <label for="exampleInputEmail1">Category Name</label>
+        <input type="text"  formControlName="main_category" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter category Name">
+        </div>
+        <div class="col-md-6">
+            <label for="arabicName">Category Arabic Name</label>
+            <input type="text"  formControlName="main_category_arabic" class="form-control" id="arabicName" aria-describedby="emailHelp" placeholder="">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6">
+        <label for="exampleInputEmail1">Sub Category Name</label>
+        <input type="text"  formControlName="sub_category" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter category Name">
+        </div>
+        <div class="col-md-6">
+            <label for="arabicName">Sub Category Arabic Name</label>
+            <input type="text" formControlName="sub_category_arabic" class="form-control" id="arabicName" aria-describedby="emailHelp" placeholder="">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6">
+        <label for="exampleInputEmail1">Product Name</label>
+        <input type="text"  formControlName="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter category Name">
+        </div>
+        <div class="col-md-6">
+            <label for="arabicName">Product Arabic Name</label>
+            <input type="text" formControlName="name_arabic" class="form-control" id="arabicName" aria-describedby="emailHelp" placeholder="">
+        </div>
+    </div>
+    <div class="form-group row">
+            <div class="col-md-6">
+                <label for="productDetails">Product Detail</label>
+                <input type="text" formControlName="product_details" class="form-control" id="productDetails" aria-describedby="emailHelp" placeholder="Description">
+            </div>
+            <div class="col-md-6">
+                <label for="productDetailsArabic">Product Arabic Detail</label>
+                <input type="text" formControlName="product_details_arabic" class="form-control" id="productDetailsArabic" aria-describedby="emailHelp" placeholder="">
+            </div>
+    </div>
+    <!-- <div class="form-group">
+        <label for="category">Select Main Category</label>
+        <select class="form-control" formControlName="main_category_id" id="category">
+            <option *ngFor="let mainCategory of mainCategoryList" value={{mainCategory.id}}>{{mainCategory.name}}</option>
+        </select>
+    </div> -->
+    <div class="form-group row">
+            <div class="col-md-6">
+                <label for="description">Description</label>
+                <textarea class="form-control" formControlName="description" id="description" rows="3"></textarea>
+            </div>
+            <div class="col-md-6">
+                <label for="descriptionArabic">Arabic Description</label>
+                <textarea class="form-control" formControlName="description_arabic" id="descriptionArabic" rows="3"></textarea>
+            </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-12">
+            <label for="price">Price</label>
+            <input type="number" formControlName="price" class="form-control" id="price" aria-describedby="emailHelp" placeholder="price">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<ngx-spinner></ngx-spinner>

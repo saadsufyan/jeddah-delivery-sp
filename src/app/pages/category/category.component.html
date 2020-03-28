@@ -1,0 +1,20 @@
+<!-- <div>
+    <button (click)="navigateAddCategory()" class="bnt btn-primary add-btn">Add</button>
+</div> -->
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Arabic Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of items">
+        <td>{{ x.id }}</td>
+        <td>{{ x.name }}</td>
+        <td>{{ x.arabic_name}}</td>
+      </tr>
+    </tbody>
+    </table>
+    <ngx-spinner></ngx-spinner>

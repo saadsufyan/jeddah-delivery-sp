@@ -1,0 +1,50 @@
+<div>
+    <button (click)="addProduct()" class="bnt btn-primary add-btn">Add</button>
+</div>
+<!-- <div class="categoryDropdown">
+    <label for="category">Select Main Category</label>
+    <select class="form-control" name="categoryid" [(ngModel)]="catObj" (change)="getSelectedCategory()">
+      <option [ngValue]="undefined" selected>Select Main Category</option>
+      <option *ngFor="let mainCategory of mainCategoryList" [ngValue]=mainCategory.id>{{mainCategory.name}}</option>
+    </select>
+</div> -->
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+<thead>
+    <tr>
+    <th>ID</th>
+    <th>Image</th>
+    <th>Date</th>
+    <th>Product Name</th>
+    <th>Product Arabic Name</th>
+    <th>Category</th>
+    <th>Arabic Category</th>
+    <th>Sub Category</th>
+    <th>Arabic Sub Category</th>
+    <th>Total Amount</th>
+    <th>Status</th>
+    <th>Action</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let x of items">
+    <td>{{ x.id }}</td>
+    <td><img class="img-size" [src]="x.images"></td>
+    <td>{{x.created_at | date: 'shortDate'}}</td>
+    <td>{{ x.name }}</td>
+    <td>{{x.name_arabic}}</td>
+    <td>{{x.main_category}}</td>
+    <td>{{x.main_category_arabic}}</td>
+    <td>{{x.sub_category}}</td>
+    <td>{{x.sub_category_arabic}}</td>
+
+    <td>{{ x.price}}</td>
+    <td>{{x.status}}</td>
+    <td>
+        <div class="col-lg-12 col-12">
+            <button class="update-delete mr-2" (click)="onUpdate(x.id)">Update</button> 
+        </div>
+    </td>
+    </tr>
+</tbody>
+</table>
+<ngx-spinner></ngx-spinner>

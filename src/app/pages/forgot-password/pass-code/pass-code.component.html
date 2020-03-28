@@ -1,0 +1,20 @@
+<section id="content" class="mt-md-5">
+    <form [formGroup]="verifyPasswordForm" (ngSubmit)="onSubmit()">
+        <h1>Verify Password</h1>
+        <div>
+            <label>Enter your mobile number</label>
+            <input type="text" formControlName="mobile" placeholder="Mobile" required="" id="mobile" />
+        </div>
+        <div>
+            <label>Enter code</label>
+            <input type="text" formControlName="code" placeholder="Enter code which was recieved by sms" required="" id="code" />
+        </div>
+        <div>
+            <input type="submit" [disabled]="!verifyPasswordForm.valid" value="Submit" />
+            <a [routerLink]="['/login']">Have an account</a>
+        </div>
+    </form>
+    <!-- form -->
+
+</section>
+<!-- content -->
