@@ -4,12 +4,13 @@ import {Router} from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { OrdersService } from 'app/services/orders/orders.service';
 import { ToastrService } from 'ngx-toastr';
+import { SharedServiceService } from 'app/services/sharedService/shared-service.service';
 
 @Component({
   selector: 'app-pending-order',
   templateUrl: './pending-order.component.html',
   styleUrls: ['./pending-order.component.scss'],
-  providers: [OrdersService]
+  providers: [OrdersService, SharedServiceService]
 })
 export class PendingOrderComponent implements OnInit, OnDestroy {
 
@@ -22,6 +23,7 @@ export class PendingOrderComponent implements OnInit, OnDestroy {
     private router: Router,
     private spinner: NgxSpinnerService,
     private toastr: ToastrService,
+    private sharedService: SharedServiceService,
     private orderApi: OrdersService) { }
 
   ngOnInit(): void {
@@ -51,6 +53,13 @@ export class PendingOrderComponent implements OnInit, OnDestroy {
         });
       }
     });
+  }
+  goToOrderDetails(id) {
+    const index = this.items.findIndex(x => x.order_id === id);
+    if (id) {
+      this.sharedService.sendData(this.items[index]);
+    }
+    this.router.navigate(['/order-detail', id]);
   }
   ngOnDestroy(): void {
     // Do not forget to unsubscribe the event

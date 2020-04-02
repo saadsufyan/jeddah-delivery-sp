@@ -9,6 +9,7 @@
     <th>Shipping Address</th>
     <th>Order Type</th>
     <th>Status</th>
+    <th>Actions</th>
     </tr>
 </thead>
 <tbody>
@@ -21,6 +22,7 @@
     <td>{{x.shipping_address}}</td>
     <td>{{x.order_type}}</td>
     <td>{{x.status}}</td>
+    <td><button class="btn btn-primary" (click)="goToOrderDetails(x.order_id)">Details</button></td>
     </tr>
 </tbody>
 </table>
