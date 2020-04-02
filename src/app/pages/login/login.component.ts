@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       this.spinner.hide();
       if (res.access_key) {
         localStorage.setItem('token', res.access_key);
-        localStorage.setItem('name', res.name);
+        localStorage.setItem('name', res.user.name);
         this.router.navigate(['/category']);
       }
     });

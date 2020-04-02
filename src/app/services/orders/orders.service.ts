@@ -49,6 +49,15 @@ export class OrdersService {
         }
     });
   }
+  GetShippedOrder() {
+    return this.http
+    .get(`${environment.baseUrl}/users/ready_to_ship_orders`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+        }
+    });
+  }
   readyToship(payload) {
     return this.http
     .post(`${environment.baseUrl}/users/order_ready`, {

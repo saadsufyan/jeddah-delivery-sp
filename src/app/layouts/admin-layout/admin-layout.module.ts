@@ -29,6 +29,7 @@ import { PendingOrderComponent } from 'app/pages/pending-order/pending-order.com
 import { CompletedOrderComponent } from 'app/pages/completed-order/completed-order.component';
 import { ConcelledOrderComponent } from 'app/pages/concelled-order/concelled-order.component';
 import { OrderDetailComponent } from 'app/pages/order-detail/order-detail.component';
+import { ShippedOrdersComponent } from 'app/pages/shipped-orders/shipped-orders.component';
 
 @NgModule({
   imports: [
@@ -59,7 +60,8 @@ import { OrderDetailComponent } from 'app/pages/order-detail/order-detail.compon
     PendingOrderComponent,
     CompletedOrderComponent,
     ConcelledOrderComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    ShippedOrdersComponent
   ]
 })
 

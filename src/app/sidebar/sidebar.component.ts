@@ -13,8 +13,9 @@ export const ROUTES: RouteInfo[] = [
     { path: '/category',      title: 'Category',     icon: 'nc-bank',      class: '' },
     { path: '/products',      title: 'My Products',     icon: 'nc-bank',      class: '' },
     { path: '/pending-order',      title: 'Pending Orders',     icon: 'nc-bank',      class: '' },
+    { path: '/shipped-order',      title: 'Shipped Orders',     icon: 'nc-bank',      class: '' },
     { path: '/completed-order',      title: 'Completed Orders',     icon: 'nc-bank',      class: '' },
-    { path: '/cancel-order',      title: 'Concelled Orders',     icon: 'nc-bank',      class: '' }
+    { path: '/cancel-order',      title: 'Concelled Orders',     icon: 'nc-bank',      class: '' },
 
 ];
 

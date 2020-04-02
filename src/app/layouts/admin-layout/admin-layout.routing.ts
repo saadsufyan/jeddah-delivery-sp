@@ -17,6 +17,7 @@ import { PendingOrderComponent } from 'app/pages/pending-order/pending-order.com
 import { CompletedOrderComponent } from 'app/pages/completed-order/completed-order.component';
 import { ConcelledOrderComponent } from 'app/pages/concelled-order/concelled-order.component';
 import { OrderDetailComponent } from 'app/pages/order-detail/order-detail.component';
+import { ShippedOrdersComponent } from 'app/pages/shipped-orders/shipped-orders.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -28,6 +29,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'completed-order',      component: CompletedOrderComponent },
     { path: 'cancel-order',      component: ConcelledOrderComponent },
     { path: 'order-detail/:id',      component: OrderDetailComponent },
+    { path: 'shipped-order',      component: ShippedOrdersComponent },
     { path: 'user',           component: UserComponent },
     { path: 'table',          component: TableComponent },
     { path: 'typography',     component: TypographyComponent },

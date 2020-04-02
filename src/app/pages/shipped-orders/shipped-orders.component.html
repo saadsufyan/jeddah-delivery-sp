@@ -1,0 +1,39 @@
+
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+<thead>
+    <tr>
+    <th>ID</th>
+    <th>Date</th>
+    <th>Customer Name</th>
+    <th>Shipping Address</th>
+    <th>VAT</th>
+    <th>Total Amount</th>
+    <th>Order Type</th>
+    <th>Status</th>
+    <th>Actions</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let x of items">
+    <td>{{ x.order_id }}</td>
+    <td>{{x.date | date: 'shortDate'}}</td>
+    <td>{{ x.customer_name }}</td>
+    <td>{{x.shipping_address}}</td>
+    <td>{{x.vat}}</td>
+    <td>{{x.total_amount}}</td>
+    <td>{{x.order_type}}</td>
+    <td>{{x.status}}</td>
+    <td>
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <button class="btn btn-primary" (click)="onDelivered(x.order_id)">Delivered</button> 
+            </div>
+            <div class="col-md-6 col-12">
+                <button class="btn btn-danger" (click)="onFailed(x.order_id)">Failed</button> 
+            </div>
+        </div>
+    </td>
+    </tr>
+</tbody>
+</table>
+<ngx-spinner></ngx-spinner>

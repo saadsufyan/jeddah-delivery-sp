@@ -43,6 +43,27 @@ export class OrderDetailComponent implements OnInit, OnDestroy {
       this.items = res.message
     })
   }
+  orderReadyToShip() {
+    const data = {
+      order_id: this.orderId
+    }
+    this.spinner.show();
+    this.orderApi.readyToship(data).subscribe(res => {
+      console.log(res);
+      this.spinner.hide();
+      this.toastr.success('Order shipped successfully', 'Order Shipped');
+    }, err => {
+      console.log(err);
+      this.spinner.hide();
+      if (err.status === 200) {
+        this.toastr.success('Order shipped successfully', 'Order Shipped');
+      } else {
+        this.toastr.error('Something went wrong', 'Failure', {
+          timeOut: 3000
+        });
+      }
+    });
+  }
   ngOnDestroy(): void {
     this.sharedService.sendData(null);
   }

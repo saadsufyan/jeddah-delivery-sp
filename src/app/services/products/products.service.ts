@@ -16,7 +16,7 @@ export class ProductsService {
     return this.http
     .post(`${environment.baseUrl}/users/product`, payload, {
         headers: new HttpHeaders({
-          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+          'Content-Type': 'application/x-www-form-urlencoded',
           'x-access-token': this.token
         })
     });
@@ -26,7 +26,7 @@ export class ProductsService {
     return this.http
     .post(`${environment.baseUrl}/users/update_product`, payload, {
       headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        'Content-Type': 'application/x-www-form-urlencoded',
         'x-access-token': this.token
       })
     });
