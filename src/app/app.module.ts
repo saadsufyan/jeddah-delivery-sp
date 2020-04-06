@@ -23,6 +23,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { PassCodeComponent } from './pages/forgot-password/pass-code/pass-code.component';
 import { ResetPasswordComponent } from './pages/forgot-password/reset-password/reset-password.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 export function tokenGetter() {
     return localStorage.getItem('token');
@@ -57,7 +58,9 @@ export function tokenGetter() {
         FooterModule,
         FixedPluginModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        NgxSpinnerModule
+
     ],
     providers: [NgbActiveModal],
     bootstrap: [AppComponent]

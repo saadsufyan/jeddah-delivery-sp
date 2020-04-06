@@ -26,9 +26,11 @@ export class ProductsService {
     return this.http
     .post(`${environment.baseUrl}/users/update_product`, payload, {
       headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded',
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-type': 'multipart/form-data; charset=utf-8; boundary=----WebKitFormBoundaryLFW4T7MnAkt8TcJh',
         'x-access-token': this.token
       })
+
     });
   }
   getAll() {

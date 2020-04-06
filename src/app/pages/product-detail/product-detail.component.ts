@@ -94,9 +94,11 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     formData.append('description', this.product.get('description').value)
     formData.append('description_arabic', this.product.get('description_arabic').value)
     formData.append('price', this.product.get('price').value)
+    formData.append('status', 'active')
 
     if (this.productData) {
       formData.append('id', this.productId);
+      console.log(formData); // console
       this.productApi.update(formData).subscribe(res => {
         this.spinner.hide();
         console.log('Product updated', res)
